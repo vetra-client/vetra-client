@@ -45,8 +45,8 @@
             top: 50%;
             right: 10%;
             transform: translateY(-50%);
-            width: 40vmin;
-            height: 40vmin;
+            width: 35vmin;
+            height: 35vmin;
             background: url('golden.png') no-repeat center center;
             background-size: contain;
             filter: drop-shadow(0 0 30px rgba(255, 215, 0, 0.8));
@@ -74,7 +74,7 @@
 
         /* Header Styles */
         header {
-            padding: 30px 0;
+            padding: 25px 0;
             position: relative;
         }
 
@@ -91,17 +91,12 @@
         }
 
         .logo {
-            width: 80px;
-            height: 80px;
-            background: #ffd700;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            color: #000;
+            width: 60px;
+            height: 60px;
+            background: url('golden.png') no-repeat center center;
+            background-size: contain;
+            filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.7));
             margin-right: 15px;
-            box-shadow: 0 0 15px rgba(255, 215, 0, 0.7);
         }
 
         .logo-text {
@@ -110,7 +105,7 @@
         }
 
         .logo-text h1 {
-            font-size: 32px;
+            font-size: 28px;
             font-weight: 800;
             background: linear-gradient(to right, #ffd700, #ffed4e, #ffd700);
             -webkit-background-clip: text;
@@ -122,7 +117,7 @@
         }
 
         .logo-text span {
-            font-size: 14px;
+            font-size: 12px;
             color: #ffd700;
             letter-spacing: 4px;
             margin-top: 3px;
@@ -135,14 +130,14 @@
         }
 
         nav ul li {
-            margin-left: 40px;
+            margin-left: 35px;
             position: relative;
         }
 
         nav ul li a {
             color: #e0e0e0;
             text-decoration: none;
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 500;
             transition: all 0.3s ease;
             padding: 8px 0;
@@ -179,12 +174,12 @@
         }
 
         .hero-content {
-            max-width: 700px;
+            max-width: 650px;
             position: relative;
         }
 
         .hero-content h2 {
-            font-size: 3.5vmax;
+            font-size: 3vmax;
             margin-bottom: 20px;
             background: linear-gradient(to right, #ffd700, #ffed4e, #ffd700);
             -webkit-background-clip: text;
@@ -196,28 +191,29 @@
         }
 
         .hero-content p {
-            font-size: 1.6vmax;
-            margin-bottom: 30px;
+            font-size: 1.4vmax;
+            margin-bottom: 25px;
             line-height: 1.6;
             color: #e0e0e0;
             font-weight: 300;
         }
 
         .game-info {
-            background: rgba(0, 0, 0, 0.6);
-            padding: 20px;
-            border-radius: 12px;
-            margin-bottom: 30px;
-            border: 1px solid rgba(255, 215, 0, 0.3);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(5px);
+            background: rgba(0, 0, 0, 0.4);
+            padding: 15px 20px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            max-width: 500px;
         }
 
         .game-info p {
-            margin-bottom: 12px;
-            font-size: 18px;
+            margin-bottom: 8px;
+            font-size: 16px;
             display: flex;
-            align-items: center;
+            align-items: flex-start;
         }
 
         .game-info p:last-child {
@@ -227,7 +223,23 @@
         .game-info i {
             color: #ffd700;
             margin-right: 10px;
-            font-size: 20px;
+            font-size: 16px;
+            margin-top: 2px;
+        }
+
+        .info-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .info-label {
+            font-weight: 600;
+            color: #ffd700;
+        }
+
+        .info-value {
+            color: #e0e0e0;
+            margin-top: 2px;
         }
 
         .download-btn {
@@ -236,9 +248,9 @@
             justify-content: center;
             background: linear-gradient(135deg, #ffd700 0%, #ffb700 100%);
             color: #000;
-            font-size: 1.3vmax;
+            font-size: 1.2vmax;
             font-weight: 700;
-            padding: 15px 40px;
+            padding: 14px 35px;
             border-radius: 60px;
             text-decoration: none;
             transition: all 0.4s ease;
@@ -271,7 +283,7 @@
 
         /* Footer Styles */
         footer {
-            padding: 20px 0;
+            padding: 15px 0;
             text-align: center;
             border-top: 1px solid rgba(255, 215, 0, 0.2);
             position: relative;
@@ -287,13 +299,13 @@
         /* Responsive Design */
         @media (max-width: 1200px) {
             .hero-content h2 {
-                font-size: 3vmax;
+                font-size: 2.5vmax;
             }
             
             .main-logo {
                 right: 5%;
-                width: 35vmin;
-                height: 35vmin;
+                width: 30vmin;
+                height: 30vmin;
             }
         }
 
@@ -310,11 +322,11 @@
             }
             
             .logo-text h1 {
-                font-size: 28px;
+                font-size: 24px;
             }
             
             nav ul li {
-                margin-left: 25px;
+                margin-left: 20px;
             }
             
             .main-logo {
@@ -322,9 +334,13 @@
                 top: auto;
                 right: auto;
                 transform: none;
-                width: 30vmin;
-                height: 30vmin;
+                width: 25vmin;
+                height: 25vmin;
                 margin: 0 auto 30px;
+            }
+            
+            .game-info {
+                margin: 0 auto 25px;
             }
         }
 
@@ -334,7 +350,7 @@
             }
             
             .logo-container {
-                margin-bottom: 20px;
+                margin-bottom: 15px;
             }
             
             nav ul {
@@ -342,11 +358,11 @@
             }
             
             nav ul li {
-                margin: 0 15px;
+                margin: 0 12px;
             }
             
             .hero-content h2 {
-                font-size: 28px;
+                font-size: 24px;
             }
             
             .hero-content p {
@@ -354,36 +370,44 @@
             }
             
             .main-logo {
-                width: 25vmin;
-                height: 25vmin;
+                width: 20vmin;
+                height: 20vmin;
             }
             
             .download-btn {
-                font-size: 16px;
+                font-size: 14px;
                 padding: 12px 30px;
+            }
+            
+            .game-info {
+                padding: 12px 15px;
+            }
+            
+            .game-info p {
+                font-size: 14px;
             }
         }
 
         @media (max-width: 576px) {
             .logo {
-                width: 60px;
-                height: 60px;
+                width: 50px;
+                height: 50px;
             }
             
             .logo-text h1 {
-                font-size: 24px;
+                font-size: 20px;
             }
             
             .logo-text span {
-                font-size: 12px;
+                font-size: 10px;
             }
             
             nav ul li a {
-                font-size: 16px;
+                font-size: 14px;
             }
             
             .hero-content h2 {
-                font-size: 24px;
+                font-size: 22px;
             }
             
             .hero-content p {
@@ -392,12 +416,12 @@
             
             .download-btn {
                 padding: 10px 25px;
-                font-size: 14px;
+                font-size: 13px;
             }
             
             .main-logo {
-                width: 20vmin;
-                height: 20vmin;
+                width: 18vmin;
+                height: 18vmin;
             }
         }
 
@@ -411,8 +435,8 @@
             }
             
             .main-logo {
-                width: 25vmin;
-                height: 25vmin;
+                width: 20vmin;
+                height: 20vmin;
             }
         }
     </style>
@@ -425,7 +449,7 @@
         <header>
             <div class="header-content">
                 <div class="logo-container">
-                    <div class="logo">V</div>
+                    <div class="logo"></div>
                     <div class="logo-text">
                         <h1>VETRA</h1>
                         <span>GOLDEN EDITION</span>
@@ -433,9 +457,9 @@
                 </div>
                 <nav>
                     <ul>
-                        <li><a href="#">GAMES</a></li>
-                        <li><a href="#">STORE</a></li>
-                        <li><a href="#">SETTINGS</a></li>
+                        <li><a href="#">PAKETLER</a></li>
+                        <li><a href="#">VERSİYONLAR</a></li>
+                        <li><a href="#">AYARLAR</a></li>
                     </ul>
                 </nav>
             </div>
@@ -447,9 +471,27 @@
                 <p>Her yönden optimize edilmiş bu özel üretim GTA:SA paketi ile rollerinizi canlandırın, çatışın ve daha fazlasını hem grafiksel hemde optimizasyon destekli gerçekleştirin.</p>
                 
                 <div class="game-info">
-                    <p><i>★</i> <strong>Sürüm:</strong> 1.1.8</p>
-                    <p><i>★</i> <strong>Boyut:</strong> 4.2 GB</p>
-                    <p><i>★</i> <strong>Platform:</strong> Windows 10 / 11 ~ Linux (Debian / Ubuntu)</p>
+                    <p>
+                        <i>★</i> 
+                        <div class="info-text">
+                            <span class="info-label">Sürüm:</span>
+                            <span class="info-value">1.1.8</span>
+                        </div>
+                    </p>
+                    <p>
+                        <i>★</i> 
+                        <div class="info-text">
+                            <span class="info-label">Boyut:</span>
+                            <span class="info-value">4.2 GB</span>
+                        </div>
+                    </p>
+                    <p>
+                        <i>★</i> 
+                        <div class="info-text">
+                            <span class="info-label">Platform:</span>
+                            <span class="info-value">Windows 10 / 11 ~ Linux (Debian / Ubuntu)</span>
+                        </div>
+                    </p>
                 </div>
                 
                 <a href="#" class="download-btn">Şimdi İndir</a>
