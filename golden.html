@@ -1,37 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grand Prix Auto - Gaming Store</title>
+    <title>VETRA Golden Edition</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Montserrat', 'Segoe UI', sans-serif;
         }
 
         body {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-                        url('golden1.png') no-repeat center center fixed;
-            background-size: cover;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(120, 80, 0, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(120, 80, 0, 0.3) 0%, transparent 50%),
+                linear-gradient(135deg, #0c0c0c 0%, #1a1200 100%);
             color: #fff;
             min-height: 100vh;
-            display: flex;
-            flex-direction: column;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .gold-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('golden1.png') no-repeat center center;
+            background-size: cover;
+            opacity: 0.15;
+            z-index: -1;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 30px;
         }
 
         /* Header Styles */
         header {
-            padding: 20px 0;
-            border-bottom: 1px solid rgba(255, 215, 0, 0.3);
+            padding: 30px 0;
+            position: relative;
+            z-index: 10;
         }
 
         .header-content {
@@ -40,24 +54,50 @@
             align-items: center;
         }
 
-        .logo {
+        .logo-container {
             display: flex;
             align-items: center;
+            position: relative;
         }
 
-        .logo img {
-            height: 60px;
-            margin-right: 15px;
+        .logo {
+            width: 120px;
+            height: 120px;
+            background: url('golden.png') no-repeat center center;
+            background-size: contain;
+            filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.7));
+            margin-right: 20px;
+            animation: pulse 4s infinite alternate;
         }
 
-        .logo h1 {
-            font-size: 28px;
-            font-weight: 700;
-            background: linear-gradient(to right, #ffd700, #ffed4e);
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.05); }
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-text h1 {
+            font-size: 42px;
+            font-weight: 800;
+            background: linear-gradient(to right, #ffd700, #ffed4e, #ffd700);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+            letter-spacing: 2px;
+            line-height: 1;
+        }
+
+        .logo-text span {
+            font-size: 18px;
+            color: #ffd700;
+            letter-spacing: 5px;
+            margin-top: 5px;
+            font-weight: 300;
         }
 
         nav ul {
@@ -66,30 +106,44 @@
         }
 
         nav ul li {
-            margin-left: 30px;
+            margin-left: 40px;
+            position: relative;
         }
 
         nav ul li a {
-            color: #fff;
+            color: #e0e0e0;
             text-decoration: none;
             font-size: 18px;
             font-weight: 500;
             transition: all 0.3s ease;
-            padding: 5px 10px;
-            border-radius: 4px;
+            padding: 8px 0;
+            position: relative;
+        }
+
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(to right, #ffd700, #ffed4e);
+            transition: width 0.3s ease;
         }
 
         nav ul li a:hover {
             color: #ffd700;
-            background: rgba(255, 215, 0, 0.1);
+        }
+
+        nav ul li a:hover:after {
+            width: 100%;
         }
 
         /* Main Content Styles */
         main {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            padding: 50px 0;
+            position: relative;
+            z-index: 5;
+            padding: 60px 0 100px;
         }
 
         .hero {
@@ -101,89 +155,165 @@
 
         .hero-content {
             flex: 1;
-            max-width: 600px;
+            max-width: 650px;
+            position: relative;
         }
 
         .hero-content h2 {
-            font-size: 48px;
-            margin-bottom: 20px;
-            background: linear-gradient(to right, #ffd700, #ffed4e);
+            font-size: 62px;
+            margin-bottom: 25px;
+            background: linear-gradient(to right, #ffd700, #ffed4e, #ffd700);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            line-height: 1.2;
+            line-height: 1.1;
+            text-shadow: 0 0 30px rgba(255, 215, 0, 0.4);
+            font-weight: 800;
         }
 
         .hero-content p {
-            font-size: 20px;
-            margin-bottom: 30px;
+            font-size: 22px;
+            margin-bottom: 35px;
             line-height: 1.6;
             color: #e0e0e0;
+            font-weight: 300;
         }
 
         .game-info {
-            background: rgba(0, 0, 0, 0.5);
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 30px;
-            border-left: 4px solid #ffd700;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 40px;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
         }
 
         .game-info p {
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             font-size: 18px;
+            display: flex;
+            align-items: center;
         }
 
         .game-info p:last-child {
             margin-bottom: 0;
         }
 
-        .download-btn {
-            display: inline-block;
-            background: linear-gradient(to right, #ffd700, #ffb700);
-            color: #000;
+        .game-info i {
+            color: #ffd700;
+            margin-right: 10px;
             font-size: 20px;
+        }
+
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #ffd700 0%, #ffb700 100%);
+            color: #000;
+            font-size: 22px;
             font-weight: 700;
-            padding: 15px 40px;
-            border-radius: 50px;
+            padding: 18px 50px;
+            border-radius: 60px;
             text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+            transition: all 0.4s ease;
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.5);
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .download-btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: 0.5s;
         }
 
         .download-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(255, 215, 0, 0.6);
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(255, 215, 0, 0.7);
+        }
+
+        .download-btn:hover:before {
+            left: 100%;
         }
 
         .hero-image {
             flex: 1;
             display: flex;
             justify-content: flex-end;
+            position: relative;
         }
 
-        .hero-image img {
-            max-width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        .game-preview {
+            width: 500px;
+            height: 320px;
+            background: 
+                linear-gradient(135deg, rgba(26, 18, 0, 0.9) 0%, rgba(40, 30, 0, 0.9) 100%),
+                url('https://images.unsplash.com/photo-1534423861386-85a16f5d13fd?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center;
+            background-size: cover;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffd700;
+            font-size: 24px;
+            font-weight: bold;
+            border: 2px solid rgba(255, 215, 0, 0.5);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .game-preview:before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            background: linear-gradient(45deg, #ffd700, #ffed4e, #ffd700, #ffed4e);
+            z-index: -1;
+            border-radius: 20px;
+            opacity: 0.3;
+            filter: blur(15px);
         }
 
         /* Footer Styles */
         footer {
-            padding: 20px 0;
+            padding: 30px 0;
             text-align: center;
-            border-top: 1px solid rgba(255, 215, 0, 0.3);
-            margin-top: 30px;
+            border-top: 1px solid rgba(255, 215, 0, 0.2);
+            margin-top: 50px;
+            position: relative;
+            z-index: 5;
         }
 
         footer p {
             color: #aaa;
-            font-size: 14px;
+            font-size: 16px;
+            font-weight: 300;
         }
 
         /* Responsive Design */
+        @media (max-width: 1200px) {
+            .hero-content h2 {
+                font-size: 52px;
+            }
+            
+            .game-preview {
+                width: 450px;
+                height: 280px;
+            }
+        }
+
         @media (max-width: 992px) {
             .hero {
                 flex-direction: column;
@@ -191,11 +321,20 @@
             }
             
             .hero-content {
-                margin-bottom: 40px;
+                margin-bottom: 50px;
+                max-width: 100%;
             }
             
             .hero-image {
                 justify-content: center;
+            }
+            
+            .logo-text h1 {
+                font-size: 36px;
+            }
+            
+            nav ul li {
+                margin-left: 25px;
             }
         }
 
@@ -204,27 +343,74 @@
                 flex-direction: column;
             }
             
+            .logo-container {
+                margin-bottom: 20px;
+            }
+            
             nav ul {
-                margin-top: 20px;
+                margin-top: 10px;
             }
             
             nav ul li {
-                margin: 0 10px;
+                margin: 0 15px;
+            }
+            
+            .hero-content h2 {
+                font-size: 42px;
+            }
+            
+            .game-preview {
+                width: 100%;
+                max-width: 400px;
+                height: 250px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .logo {
+                width: 80px;
+                height: 80px;
+            }
+            
+            .logo-text h1 {
+                font-size: 28px;
+            }
+            
+            .logo-text span {
+                font-size: 14px;
+            }
+            
+            nav ul li a {
+                font-size: 16px;
             }
             
             .hero-content h2 {
                 font-size: 36px;
             }
+            
+            .hero-content p {
+                font-size: 18px;
+            }
+            
+            .download-btn {
+                padding: 15px 35px;
+                font-size: 18px;
+            }
         }
     </style>
 </head>
 <body>
+    <div class="gold-overlay"></div>
+    
     <div class="container">
         <header>
             <div class="header-content">
-                <div class="logo">
-                    <img src="golden.png" alt="Golden Logo">
-                    <h1>GRAND PRIX AUTO</h1>
+                <div class="logo-container">
+                    <div class="logo"></div>
+                    <div class="logo-text">
+                        <h1>VETRA</h1>
+                        <span>GOLDEN EDITION</span>
+                    </div>
                 </div>
                 <nav>
                     <ul>
@@ -239,28 +425,28 @@
         <main>
             <div class="hero">
                 <div class="hero-content">
-                    <h2>Grand Prix Auto San Robines</h2>
-                    <p>Experience the ultimate racing adventure in the historic streets of San Robines. Compete against the world's best drivers in this high-octane racing simulation.</p>
+                    <h2>Grand Prix Auto<br>San Robines</h2>
+                    <p>Altın kaplama lüks sürüş deneyiminin tadını çıkarın. San Robines'in tarihi sokaklarında dünyanın en iyi sürücüleriyle yarışın.</p>
                     
                     <div class="game-info">
-                        <p><strong>Version:</strong> 192.168.0x2.00</p>
-                        <p><strong>Size:</strong> 1.610×7:83 GB</p>
+                        <p><i>★</i> <strong>Sürüm:</strong> 192.168.0x2.00</p>
+                        <p><i>★</i> <strong>Boyut:</strong> 1.610×7:83 GB</p>
+                        <p><i>★</i> <strong>Platform:</strong> PC, PlayStation, Xbox</p>
                     </div>
                     
-                    <a href="#" class="download-btn">Download Now</a>
+                    <a href="#" class="download-btn">Şimdi İndir</a>
                 </div>
                 
                 <div class="hero-image">
-                    <!-- Oyun görseli burada olacak -->
-                    <div style="width: 400px; height: 250px; background: linear-gradient(135deg, #1a1a1a, #333); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #ffd700; font-size: 20px; font-weight: bold;">
-                        GAME PREVIEW
+                    <div class="game-preview">
+                        VETRA GOLDEN EDITION
                     </div>
                 </div>
             </div>
         </main>
 
         <footer>
-            <p>&copy; 2023 Grand Prix Auto. All rights reserved.</p>
+            <p>&copy; 2023 VETRA Golden Edition. Tüm hakları saklıdır.</p>
         </footer>
     </div>
 </body>
