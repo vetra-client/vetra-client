@@ -192,54 +192,18 @@
 
         .hero-content p {
             font-size: 1.4vmax;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
             line-height: 1.6;
             color: #e0e0e0;
             font-weight: 300;
         }
 
-        .game-info {
-            background: rgba(0, 0, 0, 0.4);
-            padding: 15px 20px;
-            border-radius: 10px;
+        .version-info {
             margin-bottom: 25px;
-            border: 1px solid rgba(255, 215, 0, 0.2);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(10px);
-            max-width: 500px;
-        }
-
-        .game-info p {
-            margin-bottom: 8px;
-            font-size: 16px;
-            display: flex;
-            align-items: flex-start;
-        }
-
-        .game-info p:last-child {
-            margin-bottom: 0;
-        }
-
-        .game-info i {
+            font-weight: 700;
+            font-size: 1.2vmax;
             color: #ffd700;
-            margin-right: 10px;
-            font-size: 16px;
-            margin-top: 2px;
-        }
-
-        .info-text {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .info-label {
-            font-weight: 600;
-            color: #ffd700;
-        }
-
-        .info-value {
-            color: #e0e0e0;
-            margin-top: 2px;
+            line-height: 1.8;
         }
 
         .download-btn {
@@ -338,10 +302,6 @@
                 height: 25vmin;
                 margin: 0 auto 30px;
             }
-            
-            .game-info {
-                margin: 0 auto 25px;
-            }
         }
 
         @media (max-width: 768px) {
@@ -369,6 +329,10 @@
                 font-size: 16px;
             }
             
+            .version-info {
+                font-size: 16px;
+            }
+            
             .main-logo {
                 width: 20vmin;
                 height: 20vmin;
@@ -377,14 +341,6 @@
             .download-btn {
                 font-size: 14px;
                 padding: 12px 30px;
-            }
-            
-            .game-info {
-                padding: 12px 15px;
-            }
-            
-            .game-info p {
-                font-size: 14px;
             }
         }
 
@@ -411,6 +367,10 @@
             }
             
             .hero-content p {
+                font-size: 14px;
+            }
+            
+            .version-info {
                 font-size: 14px;
             }
             
@@ -470,28 +430,9 @@
                 <h2>Grand Theft Auto<br>San Andreas (Golden Edition)</h2>
                 <p>Her yönden optimize edilmiş bu özel üretim GTA:SA paketi ile rollerinizi canlandırın, çatışın ve daha fazlasını hem grafiksel hemde optimizasyon destekli gerçekleştirin.</p>
                 
-                <div class="game-info">
-                    <p>
-                        <i>★</i> 
-                        <div class="info-text">
-                            <span class="info-label">Sürüm:</span>
-                            <span class="info-value">1.1.8</span>
-                        </div>
-                    </p>
-                    <p>
-                        <i>★</i> 
-                        <div class="info-text">
-                            <span class="info-label">Boyut:</span>
-                            <span class="info-value">4.2 GB</span>
-                        </div>
-                    </p>
-                    <p>
-                        <i>★</i> 
-                        <div class="info-text">
-                            <span class="info-label">Platform:</span>
-                            <span class="info-value">Windows 10 / 11 ~ Linux (Debian / Ubuntu)</span>
-                        </div>
-                    </p>
+                <div class="version-info">
+                    Sürüm: 1.1.8<br>
+                    Platform: Windows & Linux
                 </div>
                 
                 <a href="#" class="download-btn">Şimdi İndir</a>
