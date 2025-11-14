@@ -43,10 +43,10 @@
         .main-logo {
             position: absolute;
             top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 60vmin;
-            height: 60vmin;
+            right: 10%;
+            transform: translateY(-50%);
+            width: 40vmin;
+            height: 40vmin;
             background: url('golden.png') no-repeat center center;
             background-size: contain;
             filter: drop-shadow(0 0 30px rgba(255, 215, 0, 0.8));
@@ -56,8 +56,8 @@
         }
 
         @keyframes pulse {
-            0% { transform: translate(-50%, -50%) scale(1); opacity: 0.7; }
-            100% { transform: translate(-50%, -50%) scale(1.05); opacity: 0.9; }
+            0% { transform: translateY(-50%) scale(1); opacity: 0.7; }
+            100% { transform: translateY(-50%) scale(1.05); opacity: 0.9; }
         }
 
         .container {
@@ -93,10 +93,15 @@
         .logo {
             width: 80px;
             height: 80px;
-            background: url('golden.png') no-repeat center center;
-            background-size: contain;
-            filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.7));
+            background: #ffd700;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #000;
             margin-right: 15px;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.7);
         }
 
         .logo-text {
@@ -168,19 +173,18 @@
             flex: 1;
             display: flex;
             align-items: center;
-            justify-content: space-between;
             width: 100%;
             position: relative;
             z-index: 5;
         }
 
         .hero-content {
-            max-width: 600px;
+            max-width: 700px;
             position: relative;
         }
 
         .hero-content h2 {
-            font-size: 4vmax;
+            font-size: 3.5vmax;
             margin-bottom: 20px;
             background: linear-gradient(to right, #ffd700, #ffed4e, #ffd700);
             -webkit-background-clip: text;
@@ -192,7 +196,7 @@
         }
 
         .hero-content p {
-            font-size: 1.8vmax;
+            font-size: 1.6vmax;
             margin-bottom: 30px;
             line-height: 1.6;
             color: #e0e0e0;
@@ -232,7 +236,7 @@
             justify-content: center;
             background: linear-gradient(135deg, #ffd700 0%, #ffb700 100%);
             color: #000;
-            font-size: 1.5vmax;
+            font-size: 1.3vmax;
             font-weight: 700;
             padding: 15px 40px;
             border-radius: 60px;
@@ -283,7 +287,13 @@
         /* Responsive Design */
         @media (max-width: 1200px) {
             .hero-content h2 {
-                font-size: 3.5vmax;
+                font-size: 3vmax;
+            }
+            
+            .main-logo {
+                right: 5%;
+                width: 35vmin;
+                height: 35vmin;
             }
         }
 
@@ -308,8 +318,13 @@
             }
             
             .main-logo {
-                width: 50vmin;
-                height: 50vmin;
+                position: relative;
+                top: auto;
+                right: auto;
+                transform: none;
+                width: 30vmin;
+                height: 30vmin;
+                margin: 0 auto 30px;
             }
         }
 
@@ -331,16 +346,21 @@
             }
             
             .hero-content h2 {
-                font-size: 32px;
+                font-size: 28px;
             }
             
             .hero-content p {
-                font-size: 18px;
+                font-size: 16px;
             }
             
             .main-logo {
-                width: 40vmin;
-                height: 40vmin;
+                width: 25vmin;
+                height: 25vmin;
+            }
+            
+            .download-btn {
+                font-size: 16px;
+                padding: 12px 30px;
             }
         }
 
@@ -363,21 +383,21 @@
             }
             
             .hero-content h2 {
-                font-size: 28px;
+                font-size: 24px;
             }
             
             .hero-content p {
-                font-size: 16px;
+                font-size: 14px;
             }
             
             .download-btn {
-                padding: 12px 30px;
-                font-size: 16px;
+                padding: 10px 25px;
+                font-size: 14px;
             }
             
             .main-logo {
-                width: 35vmin;
-                height: 35vmin;
+                width: 20vmin;
+                height: 20vmin;
             }
         }
 
@@ -391,8 +411,8 @@
             }
             
             .main-logo {
-                width: 40vmin;
-                height: 40vmin;
+                width: 25vmin;
+                height: 25vmin;
             }
         }
     </style>
@@ -405,7 +425,7 @@
         <header>
             <div class="header-content">
                 <div class="logo-container">
-                    <div class="logo"></div>
+                    <div class="logo">V</div>
                     <div class="logo-text">
                         <h1>VETRA</h1>
                         <span>GOLDEN EDITION</span>
@@ -427,9 +447,9 @@
                 <p>Her yönden optimize edilmiş bu özel üretim GTA:SA paketi ile rollerinizi canlandırın, çatışın ve daha fazlasını hem grafiksel hemde optimizasyon destekli gerçekleştirin.</p>
                 
                 <div class="game-info">
-                    <p><i>★</i> <strong>Sürüm:</strong>  1.1.8 </p>
-                    <p><i>★</i> <strong>Boyut:</strong>  4.2 GB </p>
-                    <p><i>★</i> <strong>Platform:</strong>  Windows 10 / 11 ~ Linux (Debian / Ubuntu) </p>
+                    <p><i>★</i> <strong>Sürüm:</strong> 1.1.8</p>
+                    <p><i>★</i> <strong>Boyut:</strong> 4.2 GB</p>
+                    <p><i>★</i> <strong>Platform:</strong> Windows 10 / 11 ~ Linux (Debian / Ubuntu)</p>
                 </div>
                 
                 <a href="#" class="download-btn">Şimdi İndir</a>
@@ -437,7 +457,7 @@
         </main>
 
         <footer>
-            <p>&copy; Vetra Devloper Team</p>
+            <p>&copy; Vetra Developer Team</p>
         </footer>
     </div>
 </body>
