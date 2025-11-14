@@ -51,7 +51,7 @@
             background-size: contain;
             filter: drop-shadow(0 0 30px rgba(255, 215, 0, 0.8));
             z-index: 1;
-            opacity: 0.7;
+            opacity: 0.8;
             animation: pulse 4s infinite alternate;
         }
 
@@ -265,43 +265,6 @@
             left: 100%;
         }
 
-        .hero-image {
-            max-width: 500px;
-            position: relative;
-        }
-
-        .game-preview {
-            width: 100%;
-            height: 300px;
-            background: 
-                linear-gradient(135deg, rgba(26, 18, 0, 0.9) 0%, rgba(40, 30, 0, 0.9) 100%);
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #ffd700;
-            font-size: 24px;
-            font-weight: bold;
-            border: 2px solid rgba(255, 215, 0, 0.5);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .game-preview:before {
-            content: '';
-            position: absolute;
-            top: -10px;
-            left: -10px;
-            right: -10px;
-            bottom: -10px;
-            background: linear-gradient(45deg, #ffd700, #ffed4e, #ffd700, #ffed4e);
-            z-index: -1;
-            border-radius: 20px;
-            opacity: 0.3;
-            filter: blur(15px);
-        }
-
         /* Footer Styles */
         footer {
             padding: 20px 0;
@@ -322,10 +285,6 @@
             .hero-content h2 {
                 font-size: 3.5vmax;
             }
-            
-            .game-preview {
-                height: 250px;
-            }
         }
 
         @media (max-width: 992px) {
@@ -338,10 +297,6 @@
             .hero-content {
                 margin-bottom: 40px;
                 max-width: 100%;
-            }
-            
-            .hero-image {
-                max-width: 400px;
             }
             
             .logo-text h1 {
@@ -383,11 +338,6 @@
                 font-size: 18px;
             }
             
-            .game-preview {
-                height: 200px;
-                font-size: 20px;
-            }
-            
             .main-logo {
                 width: 40vmin;
                 height: 40vmin;
@@ -423,11 +373,6 @@
             .download-btn {
                 padding: 12px 30px;
                 font-size: 16px;
-            }
-            
-            .game-preview {
-                height: 150px;
-                font-size: 18px;
             }
             
             .main-logo {
@@ -478,27 +423,21 @@
 
         <main>
             <div class="hero-content">
-                <h2>Grand Prix Auto<br>San Robines</h2>
-                <p>Altın kaplama lüks sürüş deneyiminin tadını çıkarın. San Robines'in tarihi sokaklarında dünyanın en iyi sürücüleriyle yarışın.</p>
+                <h2>Grand Theft Auto<br>San Andreas (Golden Edition)</h2>
+                <p>Her yönden optimize edilmiş bu özel üretim GTA:SA paketi ile rollerinizi canlandırın, çatışın ve daha fazlasını hem grafiksel hemde optimizasyon destekli gerçekleştirin.</p>
                 
                 <div class="game-info">
-                    <p><i>★</i> <strong>Sürüm:</strong> 192.168.0x2.00</p>
-                    <p><i>★</i> <strong>Boyut:</strong> 1.610×7:83 GB</p>
-                    <p><i>★</i> <strong>Platform:</strong> PC, PlayStation, Xbox</p>
+                    <p><i>★</i> <strong>Sürüm:</strong> 1.1.8 </p>
+                    <p><i>★</i> <strong>Boyut:</strong> 4.2 GB</p>
+                    <p><i>★</i> <strong>Platform:</strong> Windows 10 / 11 ~ Linux (Debian / Ubuntu)</p>
                 </div>
                 
                 <a href="#" class="download-btn">Şimdi İndir</a>
             </div>
-            
-            <div class="hero-image">
-                <div class="game-preview">
-                    VETRA GOLDEN EDITION
-                </div>
-            </div>
         </main>
 
         <footer>
-            <p>&copy; 2023 VETRA Golden Edition. Tüm hakları saklıdır.</p>
+            <p>&copy; Vetra Devloper Team</p>
         </footer>
     </div>
 </body>
