@@ -12,14 +12,19 @@
             font-family: 'Montserrat', 'Segoe UI', sans-serif;
         }
 
+        html, body {
+            height: 100%;
+            overflow: hidden;
+        }
+
         body {
             background: 
                 radial-gradient(circle at 20% 80%, rgba(120, 80, 0, 0.3) 0%, transparent 50%),
                 radial-gradient(circle at 80% 20%, rgba(120, 80, 0, 0.3) 0%, transparent 50%),
                 linear-gradient(135deg, #0c0c0c 0%, #1a1200 100%);
             color: #fff;
-            min-height: 100vh;
-            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
             position: relative;
         }
 
@@ -35,17 +40,42 @@
             z-index: -1;
         }
 
+        .main-logo {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60vmin;
+            height: 60vmin;
+            background: url('golden.png') no-repeat center center;
+            background-size: contain;
+            filter: drop-shadow(0 0 30px rgba(255, 215, 0, 0.8));
+            z-index: 1;
+            opacity: 0.7;
+            animation: pulse 4s infinite alternate;
+        }
+
+        @keyframes pulse {
+            0% { transform: translate(-50%, -50%) scale(1); opacity: 0.7; }
+            100% { transform: translate(-50%, -50%) scale(1.05); opacity: 0.9; }
+        }
+
         .container {
             max-width: 1400px;
             margin: 0 auto;
             padding: 0 30px;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            z-index: 10;
         }
 
         /* Header Styles */
         header {
             padding: 30px 0;
             position: relative;
-            z-index: 10;
         }
 
         .header-content {
@@ -61,18 +91,12 @@
         }
 
         .logo {
-            width: 120px;
-            height: 120px;
+            width: 80px;
+            height: 80px;
             background: url('golden.png') no-repeat center center;
             background-size: contain;
-            filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.7));
-            margin-right: 20px;
-            animation: pulse 4s infinite alternate;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            100% { transform: scale(1.05); }
+            filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.7));
+            margin-right: 15px;
         }
 
         .logo-text {
@@ -81,7 +105,7 @@
         }
 
         .logo-text h1 {
-            font-size: 42px;
+            font-size: 32px;
             font-weight: 800;
             background: linear-gradient(to right, #ffd700, #ffed4e, #ffd700);
             -webkit-background-clip: text;
@@ -93,10 +117,10 @@
         }
 
         .logo-text span {
-            font-size: 18px;
+            font-size: 14px;
             color: #ffd700;
-            letter-spacing: 5px;
-            margin-top: 5px;
+            letter-spacing: 4px;
+            margin-top: 3px;
             font-weight: 300;
         }
 
@@ -141,27 +165,23 @@
 
         /* Main Content Styles */
         main {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
             position: relative;
             z-index: 5;
-            padding: 60px 0 100px;
-        }
-
-        .hero {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
         }
 
         .hero-content {
-            flex: 1;
-            max-width: 650px;
+            max-width: 600px;
             position: relative;
         }
 
         .hero-content h2 {
-            font-size: 62px;
-            margin-bottom: 25px;
+            font-size: 4vmax;
+            margin-bottom: 20px;
             background: linear-gradient(to right, #ffd700, #ffed4e, #ffd700);
             -webkit-background-clip: text;
             background-clip: text;
@@ -172,8 +192,8 @@
         }
 
         .hero-content p {
-            font-size: 22px;
-            margin-bottom: 35px;
+            font-size: 1.8vmax;
+            margin-bottom: 30px;
             line-height: 1.6;
             color: #e0e0e0;
             font-weight: 300;
@@ -183,7 +203,7 @@
             background: rgba(0, 0, 0, 0.6);
             padding: 20px;
             border-radius: 12px;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             border: 1px solid rgba(255, 215, 0, 0.3);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
             backdrop-filter: blur(5px);
@@ -212,9 +232,9 @@
             justify-content: center;
             background: linear-gradient(135deg, #ffd700 0%, #ffb700 100%);
             color: #000;
-            font-size: 22px;
+            font-size: 1.5vmax;
             font-weight: 700;
-            padding: 18px 50px;
+            padding: 15px 40px;
             border-radius: 60px;
             text-decoration: none;
             transition: all 0.4s ease;
@@ -246,19 +266,15 @@
         }
 
         .hero-image {
-            flex: 1;
-            display: flex;
-            justify-content: flex-end;
+            max-width: 500px;
             position: relative;
         }
 
         .game-preview {
-            width: 500px;
-            height: 320px;
+            width: 100%;
+            height: 300px;
             background: 
-                linear-gradient(135deg, rgba(26, 18, 0, 0.9) 0%, rgba(40, 30, 0, 0.9) 100%),
-                url('https://images.unsplash.com/photo-1534423861386-85a16f5d13fd?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center;
-            background-size: cover;
+                linear-gradient(135deg, rgba(26, 18, 0, 0.9) 0%, rgba(40, 30, 0, 0.9) 100%);
             border-radius: 15px;
             display: flex;
             align-items: center;
@@ -288,53 +304,57 @@
 
         /* Footer Styles */
         footer {
-            padding: 30px 0;
+            padding: 20px 0;
             text-align: center;
             border-top: 1px solid rgba(255, 215, 0, 0.2);
-            margin-top: 50px;
             position: relative;
             z-index: 5;
         }
 
         footer p {
             color: #aaa;
-            font-size: 16px;
+            font-size: 14px;
             font-weight: 300;
         }
 
         /* Responsive Design */
         @media (max-width: 1200px) {
             .hero-content h2 {
-                font-size: 52px;
+                font-size: 3.5vmax;
             }
             
             .game-preview {
-                width: 450px;
-                height: 280px;
+                height: 250px;
             }
         }
 
         @media (max-width: 992px) {
-            .hero {
+            main {
                 flex-direction: column;
                 text-align: center;
+                justify-content: center;
             }
             
             .hero-content {
-                margin-bottom: 50px;
+                margin-bottom: 40px;
                 max-width: 100%;
             }
             
             .hero-image {
-                justify-content: center;
+                max-width: 400px;
             }
             
             .logo-text h1 {
-                font-size: 36px;
+                font-size: 28px;
             }
             
             nav ul li {
                 margin-left: 25px;
+            }
+            
+            .main-logo {
+                width: 50vmin;
+                height: 50vmin;
             }
         }
 
@@ -356,28 +376,36 @@
             }
             
             .hero-content h2 {
-                font-size: 42px;
+                font-size: 32px;
+            }
+            
+            .hero-content p {
+                font-size: 18px;
             }
             
             .game-preview {
-                width: 100%;
-                max-width: 400px;
-                height: 250px;
+                height: 200px;
+                font-size: 20px;
+            }
+            
+            .main-logo {
+                width: 40vmin;
+                height: 40vmin;
             }
         }
 
         @media (max-width: 576px) {
             .logo {
-                width: 80px;
-                height: 80px;
+                width: 60px;
+                height: 60px;
             }
             
             .logo-text h1 {
-                font-size: 28px;
+                font-size: 24px;
             }
             
             .logo-text span {
-                font-size: 14px;
+                font-size: 12px;
             }
             
             nav ul li a {
@@ -385,22 +413,48 @@
             }
             
             .hero-content h2 {
-                font-size: 36px;
+                font-size: 28px;
             }
             
             .hero-content p {
-                font-size: 18px;
+                font-size: 16px;
             }
             
             .download-btn {
-                padding: 15px 35px;
+                padding: 12px 30px;
+                font-size: 16px;
+            }
+            
+            .game-preview {
+                height: 150px;
                 font-size: 18px;
+            }
+            
+            .main-logo {
+                width: 35vmin;
+                height: 35vmin;
+            }
+        }
+
+        @media (max-height: 700px) {
+            header {
+                padding: 15px 0;
+            }
+            
+            footer {
+                padding: 10px 0;
+            }
+            
+            .main-logo {
+                width: 40vmin;
+                height: 40vmin;
             }
         }
     </style>
 </head>
 <body>
     <div class="gold-overlay"></div>
+    <div class="main-logo"></div>
     
     <div class="container">
         <header>
@@ -423,24 +477,22 @@
         </header>
 
         <main>
-            <div class="hero">
-                <div class="hero-content">
-                    <h2>Grand Prix Auto<br>San Robines</h2>
-                    <p>Altın kaplama lüks sürüş deneyiminin tadını çıkarın. San Robines'in tarihi sokaklarında dünyanın en iyi sürücüleriyle yarışın.</p>
-                    
-                    <div class="game-info">
-                        <p><i>★</i> <strong>Sürüm:</strong> 192.168.0x2.00</p>
-                        <p><i>★</i> <strong>Boyut:</strong> 1.610×7:83 GB</p>
-                        <p><i>★</i> <strong>Platform:</strong> PC, PlayStation, Xbox</p>
-                    </div>
-                    
-                    <a href="#" class="download-btn">Şimdi İndir</a>
+            <div class="hero-content">
+                <h2>Grand Prix Auto<br>San Robines</h2>
+                <p>Altın kaplama lüks sürüş deneyiminin tadını çıkarın. San Robines'in tarihi sokaklarında dünyanın en iyi sürücüleriyle yarışın.</p>
+                
+                <div class="game-info">
+                    <p><i>★</i> <strong>Sürüm:</strong> 192.168.0x2.00</p>
+                    <p><i>★</i> <strong>Boyut:</strong> 1.610×7:83 GB</p>
+                    <p><i>★</i> <strong>Platform:</strong> PC, PlayStation, Xbox</p>
                 </div>
                 
-                <div class="hero-image">
-                    <div class="game-preview">
-                        VETRA GOLDEN EDITION
-                    </div>
+                <a href="#" class="download-btn">Şimdi İndir</a>
+            </div>
+            
+            <div class="hero-image">
+                <div class="game-preview">
+                    VETRA GOLDEN EDITION
                 </div>
             </div>
         </main>
